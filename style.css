@@ -69,10 +69,12 @@ button:hover {
     background: #7c7c7c6b;
 }
  
+/* temperature component*/
 h1.temp {
     margin: 0;
     margin-bottom: 0.4em;
 }
+
 
 .flex{
     display: flex;
@@ -85,12 +87,15 @@ h1.temp {
     margin-left: 9px;
 }
 
+/* weather details are made not visibile during loading*/
 .weather.load {
     visibility: hidden;
     max-height: 20px;
     position: relative;
 
 }
+
+/* weather details during loading*/
 
 .weather.load:after {
     visibility: visibile;
