@@ -1,6 +1,6 @@
 let weather = {
     apiKey: "0b508b5bf0ebfe0490c4bef39eb231b3",
-    fetchWeather: function (city) {
+    fetchWeather: function (city) { //conecting to openweather API, and retrieving/displaying weather data
         fetch(
             "https://api.openweathermap.org/data/2.5/weather?q="
              + city 
@@ -12,7 +12,7 @@ let weather = {
     },
     displayWeather: function(data) {
        const { name } = data;
-       const { icon, description } = data.weather[0];
+       const { icon, description } = data.weather[0]; 
        const { temp, humidity } = data.main;
        const { speed } = data.wind;
        document.querySelector(".city").innerText = "Weather in " + name;
@@ -33,13 +33,14 @@ let weather = {
 
 };
 
-
+//user can search by pressing the search button
     document
     .querySelector(".search button")
     .addEventListener("click", function( ) {
         weather.search();
     });
 
+//user can search by clicking enter key after typing location
     document
     .querySelector(".search-bar")
     .addEventListener("keyup", function (event) {
